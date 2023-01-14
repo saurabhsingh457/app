@@ -22,7 +22,7 @@ app.use(express.json())
 app.get("/",async(req,res)=>{
     // var token =await jwt.sign({ foo: 'bar' }, 'key',{expiresIn:20});
     // jwt.verify
-    res.send("welcome")
+    res.json("welcome")
    
     console.log("hello")
 })

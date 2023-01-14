@@ -19,7 +19,7 @@ userroute.post("/register", async (req, res) => {
             bcrypt.hash(pass, 5, async (err, secure_password) => {
                 if (err) {
                     console.log(err)
-                    res.send(err)
+                    res.json(err)
                 } else {
                     const user = new Usermodel({ name, email, age, pass: secure_password })
                     await user.save()
@@ -28,7 +28,7 @@ userroute.post("/register", async (req, res) => {
                 }
             });
         } catch (error) {
-            res.send("error while registering")
+            res.json("error while registering")
             console.log(error)
         }
     }
@@ -71,7 +71,7 @@ userroute.post("/login", async (req, res) => {
         res.json("something went wrong")
         console.log(error)
     }
-    // res.send("login")
+    // res.json("login")
 })
 
 

@@ -11,14 +11,14 @@ const authentication=async(req,res,next)=>{
                 next()
             }else{
                 console.log("error while login")
-                // res.status(505).send("error")
-                res.send("invalid token")
+                // res.status(505).json("error")
+                res.json("invalid token")
             }
         }
     } catch (error) {
         // res.status(500).json({message:"invalid credn"})
         console.log(error)
-        res.send("invalid")
+        res.json("invalid")
     }
 }
 
