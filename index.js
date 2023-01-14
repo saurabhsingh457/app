@@ -27,11 +27,11 @@ app.get("/",async(req,res)=>{
     console.log("hello")
 })
 
-
+const {userroute}=require("./routes/user.route")
 
 const { authentication } = require("./middleware/authentication .middleware")
 
-const {userroute}=require("./routes/user.route")
+
 const { noteRoute } =require("./routes/note.route")
 app.use("/users",userroute)
 
